@@ -1,0 +1,327 @@
+.catalogo {
+  padding-top: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
+  display: grid;
+  grid-template-areas:
+    "hero hero"
+    "filters  filters"
+    "card  infoSection";
+
+  grid-template-rows: 2fr;
+  gap: 25px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+
+/*Header*/
+
+.header {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(217, 217, 217, 1);
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+}
+
+.logo {
+  padding-left: 100px;
+  font-size: 1.5rem;
+  font-family: "Elsie", cursive;
+  color: rgba(73, 133, 83, 1);
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.input {
+  border-radius: 10px;
+  border-color: aliceblue;
+}
+
+.search {
+  color: rgba(73, 133, 83, 1);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.weather {
+  background-color: rgb(255, 255, 255);
+  color: rgb(177, 177, 175);
+  padding: 10px;
+  height: 20px;
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: space-between;
+}
+
+.botones {
+  padding-right: 100px;
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  color: rgba(73, 133, 83, 1);
+
+  align-items: center;
+}
+
+.name {
+  color: rgba(73, 133, 83, 1);
+}
+.profile {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.cart {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.favorites {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+/*heroImage*/
+
+.hero {
+  grid-area: hero;
+  border-radius: 8px;
+
+  height: 300px;
+  background-image: url("../src/assets/img/hero2.jpg");
+  background-size: cover;
+}
+
+h1 {
+  padding-left: 50px;
+  padding-top: 25px;
+  color: rgba(73, 133, 83, 1);
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+/*filters*/
+
+.filters {
+  width: 800px;
+  grid-area: filters;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+}
+
+/*cards*/
+
+.cardDiv {
+  grid-area: card;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: space-between;
+}
+
+.titulo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Elsie", cursive;
+  color: rgba(73, 133, 83, 1);
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border-radius: 32px;
+}
+
+.price {
+  margin: 10px;
+  padding: 10px;
+}
+
+/*Info section*/
+
+.infoSection {
+  grid-area: infoSection;
+  height: 300px;
+  width: 700px;
+  display: flex;
+  flex-direction: row;
+  justify-self: end;
+  gap: 25px;
+}
+
+.proveedores {
+  width: 300px;
+  color: rgba(73, 133, 83, 1);
+
+  text-align: center;
+  display: grid;
+  gap: 10px;
+}
+
+.provTitulo {
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: "Elsie", cursive;
+  color: rgb(255, 255, 255);
+  background-color: rgba(73, 133, 83, 1);
+}
+
+.tipsTitulo {
+  text-align: center;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: "Elsie", cursive;
+  color: rgb(255, 255, 255);
+  background-color: rgba(73, 133, 83, 1);
+}
+
+.tips {
+  height: 550px;
+  text-align: center;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.texto {
+  overflow: scroll;
+}
+
+
+
+
+/*Footer*/
+
+.footer {
+  margin-top: 30px;
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: rgba(217, 217, 217, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.direccion {
+  font-size: 0.8rem;
+  width: 300px;
+  color: rgba(73, 133, 83, 1);
+}
+
+/*página logRegister*/
+
+.logRegister {
+position: absolute;
+left:240px;
+top: 120px;
+  display: grid;
+  grid-template-areas:
+    "promotion logIn"
+    "promotion registro";
+  padding: 25px;
+  gap: 25px;
+}
+
+/*promotion*/
+
+.promotion {
+  grid-area: promotion;
+  height: 650px;
+  width: 900px;
+  border-radius: 16px;
+  background-image: url(./assets/img/hero.jpg);
+  background-size: cover;
+}
+
+/*LogIn*/
+
+.logIn {
+  grid-area: logIn;
+  padding: 20px;
+  width: 500px;
+  height: 250px;
+  align-items: center;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: rgba(73, 133, 83, 1);
+  background-color: rgba(217, 217, 217, 1);
+  border-radius: 16px;
+}
+
+.logIn h1 {
+  font-size: 1.2rem;
+  font-family: "Elsie", cursive;
+  padding: 1%;
+  text-align: center;
+  color: aliceblue;
+  background-color: rgba(73, 133, 83, 1);
+  border-radius: 8px;
+}
+.formInput {
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit {
+  color: aliceblue;
+  width: 200px;
+  border-style: none;
+  border-radius: 8px;
+  margin: 20px;
+  padding: 5px;
+  background-color: rgba(73, 133, 83, 1);
+}
+
+/*Registro*/
+
+.registro {
+  grid-area: registro;
+  padding: 20px;
+  width: 500px;
+  height: 320px;
+
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: rgba(73, 133, 83, 1);
+  background-color: rgba(217, 217, 217, 1);
+  border-radius: 16px;
+}
+
+.registro h1 {
+  font-size: 1.2rem;
+  font-family: "Elsie", cursive;
+  padding: 1%;
+  text-align: center;
+  color: aliceblue;
+  background-color: rgba(73, 133, 83, 1);
+  border-radius: 8px;
+}
