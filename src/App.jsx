@@ -1,19 +1,24 @@
-import CssBaseline from '@mui/material/CssBaseline';
-import React from "react";import Cards from "./components/Cards";
+import CssBaseline from "@mui/material/CssBaseline";
+import React from "react";
+import Home from "./pages/Home";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import BasicPagination from "./components/Footer";
-
+import LogIn from "./components/LogIn";
+import Register from "./components/Register";
+import LogRegister from "./pages/LogRegister";
+import Menu from "./components/Menu";
 
 function App() {
+  return (
     <>
- <CssBaseline />
-    <Header/>
-    <Cards/>
-    <Footer/>
-    <BasicPagination/>
-
-</>
+      <CssBaseline />
+      <Header />
+      {/* <Home/> */}
+      {/* <LogRegister /> */}
+      <Menu />
+      <Footer />
+    </>
+  );
 }
 
-export default App
+export default App;
