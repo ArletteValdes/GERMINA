@@ -13,9 +13,9 @@ function App() {
     <>
       <CssBaseline />
       <Header />
-      {/* <Home/> */}
+      <Home/>
       {/* <LogRegister /> */}
-      <Menu />
+      {/* <Menu /> */}
       <Footer />
     </>
   );

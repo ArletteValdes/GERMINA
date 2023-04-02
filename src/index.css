@@ -194,16 +194,12 @@ h1 {
 }
 
 .tips {
-  height: 550px;
+  height: 400px;
   text-align: center;
   align-content: center;
   display: flex;
   flex-direction: column;
   text-align: center;
-}
-
-.texto {
-  overflow: scroll;
 }
 
 
