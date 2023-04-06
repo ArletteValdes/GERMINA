@@ -94,6 +94,7 @@
   border-radius: 50%;
 }
 
+
 /*heroImage*/
 
 .hero {
@@ -202,9 +203,6 @@ h1 {
   text-align: center;
 }
 
-
-
-
 /*Footer*/
 
 .footer {
@@ -230,11 +228,16 @@ h1 {
 }
 
 /*página logRegister*/
+.welcome {
+  color: aliceblue;
+  background-color: rgba(73, 133, 83, 1);
+  margin: 10px;
+}
 
 .logRegister {
-position: absolute;
-left:240px;
-top: 120px;
+  position: absolute;
+  left: 240px;
+  top: 120px;
   display: grid;
   grid-template-areas:
     "promotion logIn"

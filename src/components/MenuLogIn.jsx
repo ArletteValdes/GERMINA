@@ -1,14 +1,15 @@
-import * as React from "react";
-import Button from "@mui/material/Button";
-import ClickAwayListener from "@mui/material/ClickAwayListener";
-import Grow from "@mui/material/Grow";
-import Paper from "@mui/material/Paper";
-import Popper from "@mui/material/Popper";
-import MenuItem from "@mui/material/MenuItem";
-import MenuList from "@mui/material/MenuList";
-import Stack from "@mui/material/Stack";
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
+import Grow from '@mui/material/Grow';
+import Paper from '@mui/material/Paper';
+import Popper from '@mui/material/Popper';
+import MenuItem from '@mui/material/MenuItem';
+import MenuList from '@mui/material/MenuList';
+import Stack from '@mui/material/Stack';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 
-export default function Menu() {
+export default function MenuLogIn() {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
 
@@ -25,10 +26,10 @@ export default function Menu() {
   };
 
   function handleListKeyDown(event) {
-    if (event.key === "Tab") {
+    if (event.key === 'Tab') {
       event.preventDefault();
       setOpen(false);
-    } else if (event.key === "Escape") {
+    } else if (event.key === 'Escape') {
       setOpen(false);
     }
   }
@@ -44,14 +45,7 @@ export default function Menu() {
   }, [open]);
 
   return (
-    <Stack direction="row" spacing={2}>
-      <Paper>
-        <MenuList>
-          <MenuItem>Profile</MenuItem>
-          <MenuItem>My account</MenuItem>
-          <MenuItem>Logout</MenuItem>
-        </MenuList>
-      </Paper>
+    <Stack className="menu" color="color.secondary" width={50}>
       <div>
         <Button
           ref={anchorRef}
@@ -61,8 +55,13 @@ export default function Menu() {
           aria-haspopup="true"
           onClick={handleToggle}
         >
-          Dashboard
+  
+          
+          <AccountCircleOutlinedIcon color="secondary" width="10px"/>
+
+      
         </Button>
+        
         <Popper
           open={open}
           anchorEl={anchorRef.current}
@@ -79,7 +78,18 @@ export default function Menu() {
                   placement === "bottom-start" ? "left top" : "left bottom",
               }}
             >
-              <Paper>
+
+                
+              <Paper
+                elevation={3}
+                sx={{
+                  backgroundColor: "white",
+                  color: "rgba(73, 133, 83, 1)",
+                }}
+                
+              >
+
+               
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList
                     autoFocusItem={open}
@@ -87,9 +97,9 @@ export default function Menu() {
                     aria-labelledby="composition-button"
                     onKeyDown={handleListKeyDown}
                   >
-                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>My account</MenuItem>
-                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                    <MenuItem onClick={handleClose}>LogIn</MenuItem>
+        
+                 
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

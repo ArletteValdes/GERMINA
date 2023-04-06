@@ -4,6 +4,8 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import MenuLogIn from "./MenuLogIn";
+import { IconButton } from "@mui/material";
 
 const Header = () => {
   return (
@@ -26,9 +28,14 @@ const Header = () => {
      
       <div className="botones">
       <div className="name">Hola!</div>
-        <FontAwesomeIcon icon={faUser} />
+
+        <MenuLogIn/> 
+      <IconButton size="small">
         <FontAwesomeIcon icon={faHeart} />
+        </IconButton>
+        <IconButton size="small">
         <FontAwesomeIcon icon={faCartShopping} />
+        </IconButton>
       </div>
    
     </div>

@@ -6,7 +6,8 @@ import Footer from "./components/Footer";
 import LogIn from "./components/LogIn";
 import Register from "./components/Register";
 import LogRegister from "./pages/LogRegister";
-import Menu from "./components/Menu";
+import Menu from "./components/MenuUser";
+import MenuLogIn from "./components/MenuLogIn";
 
 function App() {
   return (
@@ -14,8 +15,7 @@ function App() {
       <CssBaseline />
       <Header />
       <Home/>
-      {/* <LogRegister /> */}
-      {/* <Menu /> */}
+       {/* <LogRegister /> */}
       <Footer />
     </>
   );
