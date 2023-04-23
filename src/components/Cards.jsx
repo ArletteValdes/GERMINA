@@ -7,151 +7,68 @@ import CardActions from "@mui/material/CardActions";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import planta2 from "../assets/img/planta2.jpg";
-import planta3 from "../assets/img/planta3.jpg";
-import planta4 from "../assets/img/planta4.jpg";
+import { useEffect, useState } from "react";
+
 import { Box } from "@mui/material";
+import Stack from "@mui/material/Stack";
+
 
 export default function Cards() {
+  const [Plants, setPlants] = useState([]);
+
+  const getPlants = async () => {
+    const res = await fetch("plants.json");
+    const data = await res.json();
+    setPlants(data.plantas);
+  };
+
+  useEffect(() => {
+    getPlants();
+  }, []);
+
   return (
-    <Box className="cardDiv" sx={{
-      height:"350px",
-       overflow: "hidden",
-       overflowY: "scroll",
-     }}>
-      <Card className="cardBody" sx={{ maxWidth: 345 }}>
-        <div className="titulo">
-          <CardHeader
-            action={<IconButton aria-label="settings"></IconButton>}
-            title="Planta2"
-          />
-          <CardActions disableSpacing>
-            <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
-            </IconButton>
-          </CardActions>
-        </div>
+    <Box
+      className="cardDiv"
+      sx={{
+        height: "350px",
+        width: "1000px",
+        overflow: "hidden",
+        overflowY: "scroll",
+      }}
+    >
+      <Stack direction="row"  flexWrap="wrap" gap={2} sx={{ justifyContent:"space-between" }}  >
+        {Plants.map((item) => {
+          return (
+            <div key={item.tipo}>
+              <Card className="cardBody" elevation={2} >
+                <div className="titulo">
+                  <CardHeader
+                    action={<IconButton aria-label="settings"></IconButton>}
+                    title={item.nombre}
+                  />
+                  <CardActions disableSpacing>
+                    <IconButton aria-label="add to favorites">
+                      <FavoriteIcon />
+                    </IconButton>
+                  </CardActions>
+                </div>
 
-        <CardMedia component="img" height="250" image={planta2} alt="Planta2" />
+                <CardMedia sx={{ height: 280 }} image={item.url} />
 
-        <CardContent>
-          <Typography className="price" variant="body" color="text.primary">
-            $18.000
-          </Typography>
-        </CardContent>
-      </Card>
-
-      <Card className="cardBody" sx={{ maxWidth: 345 }}>
-        <div className="titulo">
-          <CardHeader
-            action={<IconButton aria-label="settings"></IconButton>}
-            title="Planta3"
-          />
-          <CardActions disableSpacing>
-            <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
-            </IconButton>
-          </CardActions>
-        </div>
-
-        <CardMedia component="img" height="250" image={planta3} alt="Planta3" />
-
-        <CardContent>
-          <Typography className="price" variant="body" color="text.primary">
-            $18.000
-          </Typography>
-        </CardContent>
-      </Card>
-
-      <Card className="cardBody" sx={{ maxWidth: 345 }}>
-        <div className="titulo">
-          <CardHeader
-            action={<IconButton aria-label="settings"></IconButton>}
-            title="Planta4"
-          />
-          <CardActions disableSpacing>
-            <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
-            </IconButton>
-          </CardActions>
-        </div>
-
-        <CardMedia component="img" height="250" image={planta4} alt="Planta4" />
-
-        <CardContent>
-          <Typography className="price" variant="body" color="text.primary">
-            $18.000
-          </Typography>
-        </CardContent>
-      </Card>
-
-      <Card className="cardBody" sx={{ maxWidth: 345 }}>
-        <div className="titulo">
-          <CardHeader
-            action={<IconButton aria-label="settings"></IconButton>}
-            title="Planta2"
-          />
-          <CardActions disableSpacing>
-            <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
-            </IconButton>
-          </CardActions>
-        </div>
-
-        <CardMedia component="img" height="250" image={planta2} alt="Planta2" />
-
-        <CardContent>
-          <Typography className="price" variant="body" color="text.primary">
-            $18.000
-          </Typography>
-        </CardContent>
-      </Card>
-
-      <Card className="cardBody" sx={{ maxWidth: 345 }}>
-        <div className="titulo">
-          <CardHeader
-            action={<IconButton aria-label="settings"></IconButton>}
-            title="Planta3"
-          />
-          <CardActions disableSpacing>
-            <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
-            </IconButton>
-          </CardActions>
-        </div>
-
-        <CardMedia component="img" height="250" image={planta3} alt="Planta3" />
-
-        <CardContent>
-          <Typography className="price" variant="body" color="text.primary">
-            $18.000
-          </Typography>
-        </CardContent>
-      </Card>
-
-      <Card className="cardBody" sx={{ maxWidth: 345 }}>
-        <div className="titulo">
-          <CardHeader
-            action={<IconButton aria-label="settings"></IconButton>}
-            title="Planta4"
-          />
-          <CardActions disableSpacing>
-            <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
-            </IconButton>
-          </CardActions>
-        </div>
-
-        <CardMedia component="img" height="250" image={planta4} alt="Planta4" />
-
-        <CardContent>
-          <Typography className="price" variant="body" color="text.primary">
-            $18.000
-          </Typography>
-        </CardContent>
-      </Card>
-
-
+                <CardContent>
+                  <Typography
+                    className="price"
+                    variant="body"
+                    color="text.primary"
+                  >
+                    ${item.valor.toLocaleString("en")}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          );
+        })}
+      </Stack>
     </Box>
   );
 }

@@ -1,0 +1,72 @@
+{
+  "plantas": [
+    {
+      "id": 1,
+      "nombre": "Ficus trenzado",
+      "valor": "25.000",
+      "tipo": "Tropical",
+      "riego": "Cada dos días",
+      "Cuidados": "Enraizante 1 vez al mes",
+      "Vende": "Elisa",
+      "Proveedores": "SomiPlant, Lisy",
+      "url": "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRgipji2MCuHTH2aT1uLmlOqXE01llW532hrTTMCDDWzg3h2c7OwvQ23ffIdozvBo2AoxqNM_ZIU6D7HlJbFBE"
+    },
+    {
+      "id": 2,
+      "nombre": "Lavanda",
+      "valor": "18.000",
+      "tipo": "Exterior",
+      "riego": "Una vez a la semana",
+      "Cuidados": "ninguno",
+      "Vende": "",
+      "Proveedores": "SomiPlant, Lisy",
+      "url": "https://images.pexels.com/photos/12652586/pexels-photo-12652586.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": 3,
+      "nombre": "Rosal",
+      "valor": "7.000",
+      "tipo": "Exterior",
+      "riego": "Cada 3 días",
+      " Cuidados": "",
+      "Vende": "PlantLover5",
+      "Proveedores": "SomiPlant, Lisy",
+      "url": "https://images.pexels.com/photos/931154/pexels-photo-931154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": 4,
+      "nombre": "Orégano",
+      "valor": "3.000",
+      "tipo": "Tropical",
+      "riego": "Cada 3 días",
+      " Cuidados": "",
+      "Vende": "PlantLover5",
+      "Proveedores": "SomiPlant, Lisy",
+      "url": "https://images.pexels.com/photos/4503747/pexels-photo-4503747.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": 5,
+      "nombre": "Monstera",
+      "valor": "15.000",
+      "tipo": "Interior",
+      "riego": "Cada 3 días",
+      "Cuidados": "",
+      "Vende": "PlantLover8",
+      "Proveedores": "SomiPlant, Lisy",
+      "url": "https://images.pexels.com/photos/3125195/pexels-photo-3125195.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": 6,
+      "nombre": "Margaritas",
+      "valor": "7.000",
+      "tipo": "Exterior",
+      "riego": "Cada 3 días",
+      " Cuidados": "",
+      "Vende": "PlantLover8",
+      "Proveedores": "SomiPlant, Lisy",
+      "url": "https://images.pexels.com/photos/99565/daisy-pointed-flower-flower-white-99565.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+  ]
+}
+
+

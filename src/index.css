@@ -78,22 +78,6 @@
 .name {
   color: rgba(73, 133, 83, 1);
 }
-.profile {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-}
-.cart {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-}
-.favorites {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-}
-
 
 /*heroImage*/
 
@@ -116,6 +100,9 @@ h1 {
 
 /*filters*/
 
+
+
+
 .filters {
   width: 800px;
   grid-area: filters;
@@ -127,14 +114,6 @@ h1 {
 
 /*cards*/
 
-.cardDiv {
-  grid-area: card;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-  justify-content: space-between;
-}
-
 .titulo {
   display: flex;
   flex-direction: row;
@@ -144,15 +123,12 @@ h1 {
 }
 
 .cardBody {
-  display: flex;
-  flex-direction: column;
   width: 300px;
   border-radius: 32px;
 }
 
 .price {
   margin: 10px;
-  padding: 10px;
 }
 
 /*Info section*/
@@ -323,4 +299,11 @@ h1 {
   color: aliceblue;
   background-color: rgba(73, 133, 83, 1);
   border-radius: 8px;
+}
+
+/*Favoritos*/
+
+.boxFav {
+  position: absolute;
+  top: 200px;
 }

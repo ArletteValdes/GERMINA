@@ -3,20 +3,28 @@ import React from "react";
 import Home from "./pages/Home";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import LogIn from "./components/LogIn";
-import Register from "./components/Register";
 import LogRegister from "./pages/LogRegister";
-import Menu from "./components/MenuUser";
-import MenuLogIn from "./components/MenuLogIn";
+import Favorites from "./pages/Favorites";
+import { Route, Routes } from "react-router-dom";
+import NotFound from "./pages/NotFound"
+import { ContextoProvider } from "./Context/Contexto";
 
 function App() {
   return (
     <>
+    <ContextoProvider>
       <CssBaseline />
       <Header />
-      <Home/>
-       {/* <LogRegister /> */}
+
+      {/* Componente Rutas para diferentes páginas */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/LogReg" element={<LogRegister />} />
+        <Route path="/Favorites" element={<Favorites />} />
+        <Route path="*/" element={<NotFound />} />
+      </Routes>
       <Footer />
+      </ContextoProvider>
     </>
   );
 }

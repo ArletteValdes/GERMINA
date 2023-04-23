@@ -6,11 +6,19 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import MenuLogIn from "./MenuLogIn";
 import { IconButton } from "@mui/material";
+import MenuFav from "./MenuFav";
+import MenuCart from "./MenuCart";
+import { Link } from "react-router-dom";
+
+
 
 const Header = () => {
   return (
     <div className="header">
-      <p className="logo">Germina</p>
+         <Link to="/">
+         <p className="logo">Germina</p>
+          </Link>
+      
       <div className="info">
         <div className="search">
           <FontAwesomeIcon icon={faSearch} />
@@ -30,12 +38,8 @@ const Header = () => {
       <div className="name">Hola!</div>
 
         <MenuLogIn/> 
-      <IconButton size="small">
-        <FontAwesomeIcon icon={faHeart} />
-        </IconButton>
-        <IconButton size="small">
-        <FontAwesomeIcon icon={faCartShopping} />
-        </IconButton>
+        <MenuFav/>
+    <MenuCart/>
       </div>
    
     </div>
