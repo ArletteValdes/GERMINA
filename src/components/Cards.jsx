@@ -39,7 +39,7 @@ export default function Cards() {
       <Stack direction="row"  flexWrap="wrap" gap={2} sx={{ justifyContent:"space-between" }}  >
         {Plants.map((item) => {
           return (
-            <div key={item.tipo}>
+            <div key={item.id}>
               <Card className="cardBody" elevation={2} >
                 <div className="titulo">
                   <CardHeader

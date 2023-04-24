@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Contexto } from "../Context/Contexto";
+import { useContext } from "react";
 
 
 const LogIn = () => {
@@ -8,15 +9,15 @@ const LogIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(
-      "Bienvenido"
-    );
+    // alert(
+    //   "Bienvenido"
+    // );
   };
 
 const {lstUsuarios}= useContext(Contexto)
 
   const validarUsuario=()=>{
-   const lstUsuarios.find((usuario)=>usuario.email === email && usuario.password ===password );
+   const usuarioValido= lstUsuarios.find((usuario)=>usuario.email === email && usuario.password === password );
 
    if (usuarioValido){
     alert('usuario válido');
@@ -30,7 +31,7 @@ const {lstUsuarios}= useContext(Contexto)
   return (
     <div className="logIn">
      
-     <form onSubmit={handleSubmit} autocomplete="off">
+     <form onSubmit={handleSubmit} >
        <h1>Bienvenido Amante de las plantas</h1>
        <div className="formInput">
          <label>Email</label>
