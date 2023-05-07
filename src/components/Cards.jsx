@@ -7,24 +7,14 @@ import CardActions from "@mui/material/CardActions";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import { useEffect, useState } from "react";
+
+
 
 import { Box } from "@mui/material";
 import Stack from "@mui/material/Stack";
 
 
-export default function Cards() {
-  const [Plants, setPlants] = useState([]);
-
-  const getPlants = async () => {
-    const res = await fetch("plants.json");
-    const data = await res.json();
-    setPlants(data.plantas);
-  };
-
-  useEffect(() => {
-    getPlants();
-  }, []);
+export default function Cards({Plants}) {
 
   return (
     <Box

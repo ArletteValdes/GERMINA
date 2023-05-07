@@ -1,15 +1,28 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import CardHeader from "@mui/material/CardHeader";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import { Box } from "@mui/material";
+import Stack from "@mui/material/Stack";
 import { useState } from "react";
 
-const Filter = ({Plants}) => {
-  const [filter, setFilter] = useState();
+const Filter = ({ Plants }) => {
+  const [filter, setFilter] = useState(Plants);
 
-  // const filteredItems = filter ? Plants.filter((item) => item.tipo === filter) : items;
+  const filteredItems = filter ? Plants.filter((item) => item.tipo === filter): items;
 
   const handleFilter = (event) => {
     setFilter(event.currentTarget.value);
   };
+
+  const setFilterAll=()=>{}
+  
 
   return (
     <>
@@ -17,7 +30,8 @@ const Filter = ({Plants}) => {
         <Button
           variant={filter === "" ? "contained" : "outlined"}
           color="secondary"
-          onClick={() => setFilter("")}
+          value="todos"
+          onClick={setFilterAll}
         >
           Todos
         </Button>
@@ -71,13 +85,58 @@ const Filter = ({Plants}) => {
         </Button>
       </div>
 
-      {/* <div>
-        {filteredItems.map((item) => (
-          <div key={item.id}>
-            <p>{item.tipo}</p>
-          </div>
-        ))}
-      </div> */}
+
+
+      <div>
+        <Box
+          className="cardDiv"
+          sx={{
+            height: "350px",
+            width: "1000px",
+            overflow: "hidden",
+            overflowY: "scroll",
+          }}
+        >
+          <Stack
+            direction="row"
+            flexWrap="wrap"
+            gap={2}
+            sx={{ justifyContent: "flex-start" }}
+          >
+            {filteredItems.map((item) => {
+              return (
+                <div key={item.id}>
+                  <Card className="cardBody" elevation={2}>
+                    <div className="titulo">
+                      <CardHeader
+                        action={<IconButton aria-label="settings"></IconButton>}
+                        title={item.nombre}
+                      />
+                      <CardActions disableSpacing>
+                        <IconButton aria-label="add to favorites">
+                          <FavoriteIcon />
+                        </IconButton>
+                      </CardActions>
+                    </div>
+
+                    <CardMedia sx={{ height: 280 }} image={item.url} />
+
+                    <CardContent>
+                      <Typography
+                        className="price"
+                        variant="body"
+                        color="text.primary"
+                      >
+                        ${item.valor.toLocaleString("en")}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </div>
+              );
+            })}
+          </Stack>
+        </Box>
+      </div>
     </>
   );
 };

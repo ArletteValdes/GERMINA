@@ -57,6 +57,17 @@
     },
     {
       "id": 6,
+      "nombre": "Hortensias",
+      "valor": "15.000",
+      "tipo": "Jardín",
+      "riego": "Cada 3 días",
+      "Cuidados": "",
+      "Vende": "PlantLover8",
+      "Proveedores": "SomiPlant, Lisy",
+      "url": "https://images.pexels.com/photos/700429/pexels-photo-700429.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    },
+    {
+      "id": 7,
       "nombre": "Margaritas",
       "valor": "7.000",
       "tipo": "Exterior",
