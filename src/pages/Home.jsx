@@ -1,6 +1,6 @@
 import HeroSection from "../components/HeroSection";
 import Filter from "../components/Filter";
-import Cards from "../components/Cards";
+
 import Proveedores from "../components/Proveedores";
 import { useEffect, useState } from "react";
 

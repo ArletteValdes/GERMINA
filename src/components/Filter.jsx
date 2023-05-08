@@ -11,18 +11,26 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Box } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import { useState } from "react";
+import { ContextoProvider } from "../Context/Contexto";
+
 
 const Filter = ({ Plants }) => {
-  const [filter, setFilter] = useState(Plants);
 
-  const filteredItems = filter ? Plants.filter((item) => item.tipo === filter): items;
+  const { addFav} = ContextoProvider();
+  const [isClick, setClick]=useState(false);
+  const [filter, setFilter] = useState('todos');
+
+
+
+  const filteredItems = Plants.filter((item) => (item.tipo === filter || filter === 'todos'));
 
   const handleFilter = (event) => {
     setFilter(event.currentTarget.value);
   };
 
-  const setFilterAll=()=>{}
-  
+  const setFilterAll=(event) => {
+    setFilter(event.currentTarget.value);
+  };
 
   return (
     <>
@@ -113,7 +121,7 @@ const Filter = ({ Plants }) => {
                         title={item.nombre}
                       />
                       <CardActions disableSpacing>
-                        <IconButton aria-label="add to favorites">
+                        <IconButton aria-label="add to favorites"  isClick={isClick} onClick={()=>((setClick(!isClick) , addFav(item)))}>
                           <FavoriteIcon />
                         </IconButton>
                       </CardActions>

@@ -1,10 +1,10 @@
-import Cards from "../components/Cards";
+
 import { Box } from "@mui/material";
 
-const Favorites = () => {
+const Favorites = ({}) => {
   return (
     <Box className="boxFav">
-      <Cards />
+   
     </Box>
   );
 };

@@ -1,8 +1,17 @@
 import { createContext } from "react";
+import { useState } from "react";
 
 export const Contexto= createContext({});
 
 export const ContextoProvider =(props) =>{
+
+
+const [fav, setFav]=useState([])
+
+const addFav = (item) => {
+    setFav([...fav, { item }]);
+  };
+
 
     const lstUsuarios=[
         {
@@ -15,7 +24,7 @@ export const ContextoProvider =(props) =>{
         }
     ];
     return(
-        <Contexto.Provider value={{lstUsuarios}}>
+        <Contexto.Provider value={{lstUsuarios,fav,addFav}}>
             {props.children}
         </Contexto.Provider>
     )
