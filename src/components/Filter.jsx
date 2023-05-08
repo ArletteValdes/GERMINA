@@ -11,12 +11,12 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Box } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import { useState } from "react";
-import { ContextoProvider } from "../Context/Contexto";
+import { useContexto } from "../Context/Contexto";
 
 
 const Filter = ({ Plants }) => {
 
-  const { addFav} = ContextoProvider();
+  const { addFav} = useContexto();
   const [isClick, setClick]=useState(false);
   const [filter, setFilter] = useState('todos');
 
@@ -121,7 +121,7 @@ const Filter = ({ Plants }) => {
                         title={item.nombre}
                       />
                       <CardActions disableSpacing>
-                        <IconButton aria-label="add to favorites"  isClick={isClick} onClick={()=>((setClick(!isClick) , addFav(item)))}>
+                        <IconButton aria-label="add to favorites" isClick={isClick} onClick={()=>((setClick(!isClick) , addFav(item)))}  >
                           <FavoriteIcon />
                         </IconButton>
                       </CardActions>

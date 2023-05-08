@@ -9,7 +9,12 @@ import {  Route, Routes } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import { ContextoProvider } from "./Context/Contexto";
 
+
 function App() {
+
+
+
+
   return (
     <>
       <ContextoProvider>

@@ -1,9 +1,9 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 import { useState } from "react";
 
-export const Contexto= createContext({});
+export const Contexto= createContext();
 
-export const ContextoProvider =(props) =>{
+export const ContextoProvider =({children}) =>{
 
 
 const [fav, setFav]=useState([])
@@ -24,12 +24,12 @@ const addFav = (item) => {
         }
     ];
     return(
-        <Contexto.Provider value={{lstUsuarios,fav,addFav}}>
-            {props.children}
+        <Contexto.Provider value={{lstUsuarios,fav,addFav, setFav}}>
+            {children}
         </Contexto.Provider>
     )
 
 }
 
 
-export default Contexto
+export const useContexto=()=>useContext(Contexto);
