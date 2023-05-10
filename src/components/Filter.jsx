@@ -12,12 +12,18 @@ import { Box } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import { useState } from "react";
 import { useContexto } from "../Context/Contexto";
+import Heart from "react-animated-heart"
 
 
 const Filter = ({ Plants }) => {
 
-  const { addFav} = useContexto();
+  const {addFav} = useContexto();
+
+
   const [isClick, setClick]=useState(false);
+
+
+
   const [filter, setFilter] = useState('todos');
 
 
@@ -93,8 +99,6 @@ const Filter = ({ Plants }) => {
         </Button>
       </div>
 
-
-
       <div>
         <Box
           className="cardDiv"
@@ -121,9 +125,10 @@ const Filter = ({ Plants }) => {
                         title={item.nombre}
                       />
                       <CardActions disableSpacing>
-                        <IconButton aria-label="add to favorites" isClick={isClick} onClick={()=>((setClick(!isClick) , addFav(item)))}  >
+                      <Heart isClick={isClick} onClick={()=>((setClick(!isClick) , addFav(item)))}/>
+                        {/* <IconButton aria-label="add to favorites" click={click} onClick={()=>((setClick(!click) , addFav(item)))}  >
                           <FavoriteIcon />
-                        </IconButton>
+                        </IconButton> */}
                       </CardActions>
                     </div>
 

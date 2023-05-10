@@ -14,8 +14,8 @@ import { useContexto } from "../Context/Contexto";
 
 
 
-const Favorites = ({ Plants }) => {
-  const { fav } = useContexto();
+const Favorites = () => {
+  const { fav, Plants } = useContexto();
 
 
 
@@ -37,7 +37,7 @@ const Favorites = ({ Plants }) => {
             gap={2}
             sx={{ justifyContent: "flex-start" }}
           >
-            {Plants.map((item) => {
+            {fav.map((item) => {
               return (
                 <div key={item.id}>
                   <Card className="cardBody" elevation={2}>
@@ -56,7 +56,7 @@ const Favorites = ({ Plants }) => {
                     <CardMedia sx={{ height: 280 }} image={item.url} />
 
                     <CardContent>
-                      <Typography
+                    <Typography
                         className="price"
                         variant="body"
                         color="text.primary"
