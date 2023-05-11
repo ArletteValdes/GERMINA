@@ -3,16 +3,20 @@ import Button from "@mui/material/Button";
 
 import { useState } from "react";
 import { useContexto } from "../Context/Contexto";
-import Cards from "./Cards";
+import Galeria from "./Galeria";
 
 
 
 
-const Filter = () => {
-  
+const Filter = (item) => {
+
   const { Plants } = useContexto();
 
+ 
+
   const [filter, setFilter] = useState("todos");
+
+ 
 
   const handleFilter = (event) => {
     setFilter(event.currentTarget.value);
@@ -25,6 +29,8 @@ const Filter = () => {
   const filteredItems = Plants.filter(
     (item) => item.tipo === filter || filter === "todos"
   );
+
+
 
   return (
     <>
@@ -88,11 +94,15 @@ const Filter = () => {
       </div>
 
             {filteredItems.map((item) => {
-              <Cards key={item.id} info={item} />;
+
+
+              <Galeria key={item.id} />;
             })}
   
-    
+
     </>
+
+    
   );
 };
 

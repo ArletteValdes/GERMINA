@@ -9,10 +9,10 @@ import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useContexto } from "../Context/Contexto";
 
-const Cards = ({ info}) => {
+const Cards = ({info}) => {
 
 
-  const { addFav, Plants, removeFav, fav } = useContexto();
+  const { addFav, removeFav, fav} = useContexto();
 
   return (
 

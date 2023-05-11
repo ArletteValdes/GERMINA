@@ -7,14 +7,16 @@ const Perfil = () => {
 
   return (
     <div className="misFav">
-      {fav.map((item) => (
 
+
+
+      {fav.map((item) => 
 
 
         <Cards key={item.id} info={item} fav></Cards>
 
       
-      ))}
+      )}
 
 
     </div>

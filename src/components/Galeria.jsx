@@ -3,8 +3,9 @@ import Stack from "@mui/material/Stack";
 import { useContexto } from "../Context/Contexto";
 import Cards from "./Cards";
 
-const Galeria = ({item}) => {
-  const { fav, Plants } = useContexto();
+const Galeria = () => {
+  const { Plants } = useContexto();
+
 
   return (
     <>
@@ -25,8 +26,14 @@ const Galeria = ({item}) => {
             sx={{ justifyContent: "flex-start" }}
           >
             {Plants.map((item) => (
+
+             
+
               <Cards key={item.id} info={item} />
+
+
             ))}
+
           </Stack>
         </Box>
       </div>
