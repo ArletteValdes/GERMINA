@@ -1,4 +1,4 @@
-import Heart from "react-animated-heart";
+
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useContexto } from "../Context/Contexto";
 
-const Cards = ({info}) => {
+const Cards = ({info}, filteredItems) => {
 
 
   const { addFav, removeFav, fav} = useContexto();

@@ -76,6 +76,17 @@
       "Vende": "PlantLover8",
       "Proveedores": "SomiPlant, Lisy",
       "url": "https://images.pexels.com/photos/99565/daisy-pointed-flower-flower-white-99565.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": 8,
+      "nombre": "Margaritas",
+      "valor": "7.000",
+      "tipo": "Exterior",
+      "riego": "Cada 3 días",
+      " Cuidados": "",
+      "Vende": "PlantLover8",
+      "Proveedores": "SomiPlant, Lisy",
+      "url": "https://images.pexels.com/photos/99565/daisy-pointed-flower-flower-white-99565.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }
   ]
 }
