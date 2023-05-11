@@ -1,42 +1,30 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
-import Card from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
-import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import { Box } from "@mui/material";
-import Stack from "@mui/material/Stack";
+
 import { useState } from "react";
 import { useContexto } from "../Context/Contexto";
-import Heart from "react-animated-heart"
-
-
-const Filter = ({ Plants }) => {
-
-  const {addFav} = useContexto();
-
-
-  const [isClick, setClick]=useState(false);
+import Cards from "./Cards";
 
 
 
-  const [filter, setFilter] = useState('todos');
 
+const Filter = () => {
+  
+  const { Plants } = useContexto();
 
-
-  const filteredItems = Plants.filter((item) => (item.tipo === filter || filter === 'todos'));
+  const [filter, setFilter] = useState("todos");
 
   const handleFilter = (event) => {
     setFilter(event.currentTarget.value);
   };
 
-  const setFilterAll=(event) => {
+  const setFilterAll = (event) => {
     setFilter(event.currentTarget.value);
   };
+
+  const filteredItems = Plants.filter(
+    (item) => item.tipo === filter || filter === "todos"
+  );
 
   return (
     <>
@@ -99,57 +87,11 @@ const Filter = ({ Plants }) => {
         </Button>
       </div>
 
-      <div>
-        <Box
-          className="cardDiv"
-          sx={{
-            height: "350px",
-            width: "1000px",
-            overflow: "hidden",
-            overflowY: "scroll",
-          }}
-        >
-          <Stack
-            direction="row"
-            flexWrap="wrap"
-            gap={2}
-            sx={{ justifyContent: "flex-start" }}
-          >
             {filteredItems.map((item) => {
-              return (
-                <div key={item.id}>
-                  <Card className="cardBody" elevation={2}>
-                    <div className="titulo">
-                      <CardHeader
-                        action={<IconButton aria-label="settings"></IconButton>}
-                        title={item.nombre}
-                      />
-                      <CardActions disableSpacing>
-                      <Heart isClick={isClick} onClick={()=>((setClick(!isClick) , addFav(item)))}/>
-                        {/* <IconButton aria-label="add to favorites" click={click} onClick={()=>((setClick(!click) , addFav(item)))}  >
-                          <FavoriteIcon />
-                        </IconButton> */}
-                      </CardActions>
-                    </div>
-
-                    <CardMedia sx={{ height: 280 }} image={item.url} />
-
-                    <CardContent>
-                      <Typography
-                        className="price"
-                        variant="body"
-                        color="text.primary"
-                      >
-                        ${item.valor.toLocaleString("en")}
-                      </Typography>
-                    </CardContent>
-                  </Card>
-                </div>
-              );
+              <Cards key={item.id} info={item} />;
             })}
-          </Stack>
-        </Box>
-      </div>
+  
+    
     </>
   );
 };

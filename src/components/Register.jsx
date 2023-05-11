@@ -19,7 +19,7 @@ const Register= () => {
 
 
    <div className="registro">
-     <form onSubmit={handleSubmit} autocomplete="off">
+     <form onSubmit={handleSubmit} autoComplete="off">
        <h1>Regístrate aquí</h1>
        <div className="formInput">
          <label>Email</label>

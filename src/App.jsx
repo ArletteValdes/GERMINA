@@ -4,11 +4,11 @@ import Home from "./pages/Home";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import LogRegister from "./pages/LogRegister";
-import Favorites from "./pages/Favorites";
+import Galeria from "./components/Galeria";
 import {  Route, Routes } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import { ContextoProvider } from "./Context/Contexto";
-
+import Perfil from "./pages/Perfil";
 
 function App() {
 
@@ -24,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/LogReg" element={<LogRegister />} />
-          <Route path="/Favorites" element={<Favorites />} />
+          <Route path="/Perfil" element={<Perfil />} />
           <Route path="*/" element={<NotFound />} />
         </Routes>
         <Footer />

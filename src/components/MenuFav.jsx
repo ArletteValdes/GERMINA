@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default function MenuFav() {
     return (
         <div>
-          <Link to="/Favorites">
+          <Link to="/Perfil">
             <FavoriteBorderOutlined color="secondary" width="10px" />
           </Link>
         </div>
