@@ -1,7 +1,6 @@
 {"Plants":[
    {
         "nombre": "planta1",
-        "valor":"$1.000",
         "tipo": "Interior",
         "riego": "Cada dos días",
         "Cuidados Especiales":"Enraizante 1 vez al mes",
@@ -11,7 +10,6 @@
     },
     {
         "nombre": "planta2",
-        "valor":"$1.000",
         "tipo": "Exterior",
         "riego": "Una vez a la semana",
         "Cuidados Especiales":"ninguno",
@@ -22,7 +20,6 @@
 
     {
         "nombre": "planta3",
-        "valor":"$1.000",
         "tipo": "Tropical",
         "riego": "Cada 3 días",
         "Cuidados Especiales":"",
